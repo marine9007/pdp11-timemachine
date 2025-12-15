@@ -31,5 +31,5 @@ if [ -z "$SIMH_PATH" ]; then
     echo "Please extract SIMH next to this folder, or edit this script with the correct path."
     exit 1
 fi
-
 "$SIMH_PATH/PDP11.exe" boot.ini
+

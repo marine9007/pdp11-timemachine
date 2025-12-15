@@ -240,6 +240,10 @@ This is real Unix history running on your machine!
 
 **Stuck at `:` prompt?** Just press Enter.
 
+**Need to exit?** Press **Ctrl+E** to break into SIMH prompt, then type `quit` and press Enter. Or just close the terminal window.
+
+**Login asking for password?** Some disk images have passwords set. Try pressing Enter (blank password) or check the disk image documentation. You can always exit with Ctrl+E → `quit` if needed.
+
 **No response?** Press Ctrl+E to break, then `quit` to exit.
 
 **Want to start fresh?** Just run the boot command again.
