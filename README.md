@@ -89,6 +89,44 @@ Edit `boot.ini` to change the emulated hardware:
 | `ps aux` | running processes |
 | `df` | disk space |
 
+### Command History
+
+**Important:** The default shell (`/bin/sh`) doesn't have command history. Arrow keys won't work for history navigation — that's a modern feature.
+
+**To enable history, switch to C shell:**
+
+```bash
+csh
+```
+
+**Check your current shell:**
+```bash
+echo $SHELL
+```
+
+**Make csh your default shell:**
+```bash
+chsh
+```
+When prompted, enter: `/bin/csh`
+
+**Using history in csh:**
+
+| Command | Description |
+|---------|-------------|
+| `history` | show numbered list of past commands |
+| `!!` | repeat last command |
+| `!n` | repeat command number n (from history list) |
+| `!-2` | repeat 2 commands ago |
+| `!ls` | repeat last command starting with "ls" |
+
+**Set history size** (add to `~/.cshrc`):
+```bash
+set history = 100
+```
+
+**Note:** Arrow keys for history navigation didn't exist in 1991-era Unix. Use `history` to see command numbers, then `!n` to repeat them.
+
 ### Key Directories
 
 | Path | Contents |
