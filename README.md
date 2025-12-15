@@ -20,19 +20,29 @@ Run real Unix from 1980s on your PC!
 
 Git Bash:
 ```bash
-../simh-2024-07-05_06-07-03-Windows-Win32-4.0-Current-670a3728/PDP11.exe boot.ini
+../simh-*/PDP11.exe boot.ini
+```
+
+Or if SIMH is in a different location:
+```bash
+/path/to/simh/PDP11.exe boot.ini
 ```
 
 CMD/PowerShell:
 ```cmd
-..\simh-2024-07-05_06-07-03-Windows-Win32-4.0-Current-670a3728\PDP11.exe boot.ini
+..\simh-*\PDP11.exe boot.ini
+```
+
+Or if SIMH is in a different location:
+```cmd
+C:\path\to\simh\PDP11.exe boot.ini
 ```
 
 ### What the launch command does
 
 | Part | Explanation |
 |------|-------------|
-| `../simh-2024-07-05.../` | Path to SIMH emulator folder (one level up from here) |
+| `../simh-*/` or path | Path to SIMH emulator folder (extracted from GitHub release) |
 | `PDP11.exe` | The PDP-11 hardware emulator executable |
 | `boot.ini` | Our config file that sets up CPU, attaches disk, and boots |
 

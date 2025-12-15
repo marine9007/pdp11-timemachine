@@ -23,6 +23,20 @@ REM Navigate to this script's directory (works regardless of where you run it fr
 cd /d "%~dp0"
 
 REM Launch SIMH PDP-11 emulator with our boot config
-REM The emulator folder is one level up (..)
-..\simh-2024-07-05_06-07-03-Windows-Win32-4.0-Current-670a3728\PDP11.exe boot.ini
+REM The emulator folder is one level up (..) - find any simh-* folder
+set "SIMH_PATH="
+for /d %%d in ("..\simh-*") do (
+    set "SIMH_PATH=%%d"
+    goto :found
+)
+
+:found
+if "%SIMH_PATH%"=="" (
+    echo Error: Could not find SIMH folder (simh-*) one level up from here.
+    echo Please extract SIMH next to this folder, or edit this script with the correct path.
+    pause
+    exit /b 1
+)
+
+"%SIMH_PATH%\PDP11.exe" boot.ini
 pause

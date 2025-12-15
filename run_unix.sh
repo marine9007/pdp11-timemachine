@@ -23,5 +23,13 @@ echo ""
 cd "$(dirname "$0")"
 
 # Launch SIMH PDP-11 emulator with our boot config
-# The emulator folder is one level up (..)
-../simh-2024-07-05_06-07-03-Windows-Win32-4.0-Current-670a3728/PDP11.exe boot.ini
+# The emulator folder is one level up (..) - find any simh-* folder
+SIMH_PATH=$(find .. -maxdepth 1 -type d -name "simh-*" 2>/dev/null | head -1)
+
+if [ -z "$SIMH_PATH" ]; then
+    echo "Error: Could not find SIMH folder (simh-*) one level up from here."
+    echo "Please extract SIMH next to this folder, or edit this script with the correct path."
+    exit 1
+fi
+
+"$SIMH_PATH/PDP11.exe" boot.ini
