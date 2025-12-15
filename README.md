@@ -67,11 +67,33 @@ Edit `boot.ini` to change the emulated hardware:
 
 ## Boot Sequence
 
-1. Run the command above
-2. At the `:` prompt → **Press Enter** (blank input)
-3. Watch boot messages scroll
-4. At `#` prompt (single user) → **Press Ctrl+D**
-5. At `login:` → Type **root** (no password)
+**Follow these steps exactly:**
+
+1. **Run the launch command** (from Quick Start above)
+
+2. **At the `:` prompt** — Press **Enter** (blank input, or type `xp(0,0,0)unix` and press Enter)
+   ```
+   :
+   ```
+   *(Just press Enter here)*
+
+3. **Watch boot messages scroll** — You'll see hardware detection, memory info, etc.
+
+4. **At the `#` prompt** (single user mode) — Press **Ctrl+D**
+   ```
+   # Fast boot ... skipping disk checks
+   ...
+   #
+   ```
+   *(Press Ctrl+D to exit single user mode)*
+
+5. **At `login:` prompt** — Type **root** and press Enter
+   ```
+   login: root
+   ```
+   *(Type "root" and press Enter)*
+
+6. **You're in!** You should see a `#` prompt — you're logged in as root.
 
 ## You're in Unix!
 
