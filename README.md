@@ -1,10 +1,12 @@
 # 2.11BSD on SIMH PDP-11 Emulator
 
-🖥️ **Back to the sysadmin office, 1983-1987** — four years running the PDP-11, your own office with the toaster oven and coffee pot, Wednesday bagel day, and that green phosphor glow while you kept the mainframe alive. The Dragons had the keys to the kingdom, and now you can relive it all (minus the actual hardware maintenance) right on your Windows machine.
+🖥️ **Back to the sysadmin office, 1983-1987** — four years running the PDP-11, your own office with the toaster oven and coffee pot, Wednesday bagel day, and that green phosphor glow while you kept the mainframe alive. The Dragons had the keys to the kingdom, and now you can relive it all (minus the actual hardware maintenance) right on your Windows or Mac machine.
 
-Run real Unix from 1980s on your PC!
+Run real Unix from 1980s on your PC or Mac!
 
 ## Setup
+
+### Windows
 
 **1. Download SIMH emulator:**
 - [SIMH Windows Binaries](https://github.com/simh/simh/releases) — grab the latest Windows release, extract next to this folder
@@ -12,9 +14,25 @@ Run real Unix from 1980s on your PC!
 **2. Download the 2.11BSD disk image:**
 - [211bsd.dsk from trailing-edge.com](http://www.trailing-edge.com/~bqt/pdp11/) — download `211bsd.dsk` (~170MB) and place it in this folder
 
+### macOS
+
+**1. Download SIMH emulator:**
+- [SIMH macOS Binaries](https://github.com/simh/simh/releases) — grab the latest macOS/Darwin release, extract next to this folder
+- Or install via Homebrew: `brew install simh`
+
+**2. Download the 2.11BSD disk image:**
+- [211bsd.dsk from trailing-edge.com](http://www.trailing-edge.com/~bqt/pdp11/) — download `211bsd.dsk` (~170MB) and place it in this folder
+
+**3. Make executable (if needed):**
+```bash
+chmod +x ../simh-*/pdp11
+```
+
 ## Quick Start
 
-**Option 1:** Double-click `run_unix.bat` (Windows) or run `./run_unix.sh` (Git Bash)
+### Windows
+
+**Option 1:** Double-click `run_unix.bat` or run `./run_unix.sh` (Git Bash)
 
 **Option 2:** Manual launch (run from this folder):
 
@@ -38,12 +56,34 @@ Or if SIMH is in a different location:
 C:\path\to\simh\PDP11.exe boot.ini
 ```
 
+### macOS
+
+**Option 1:** Run the launcher script:
+```bash
+./run_unix.sh
+```
+
+**Option 2:** Manual launch (run from this folder):
+```bash
+../simh-*/pdp11 boot.ini
+```
+
+Or if SIMH is in a different location:
+```bash
+/path/to/simh/pdp11 boot.ini
+```
+
+Or if installed via Homebrew:
+```bash
+pdp11 boot.ini
+```
+
 ### What the launch command does
 
 | Part | Explanation |
 |------|-------------|
 | `../simh-*/` or path | Path to SIMH emulator folder (extracted from GitHub release) |
-| `PDP11.exe` | The PDP-11 hardware emulator executable |
+| `PDP11.exe` (Windows) or `pdp11` (macOS) | The PDP-11 hardware emulator executable |
 | `boot.ini` | Our config file that sets up CPU, attaches disk, and boots |
 
 The `boot.ini` file contains:
@@ -239,7 +279,7 @@ halt
 | `211bsd.dsk` | 170MB RP06 disk image with full 2.11BSD *(download separately — see Setup)* |
 | `boot.ini` | SIMH configuration script |
 | `run_unix.bat` | Windows launcher |
-| `run_unix.sh` | Git Bash launcher |
+| `run_unix.sh` | Git Bash / macOS launcher |
 
 ## SIMH Commands (at sim> prompt)
 
@@ -291,7 +331,7 @@ This is real Unix history running on your machine!
 Here's what a successful boot sequence looks like:
 
 ```
-$ ../PDP11.exe boot.ini
+$ ../pdp11 boot.ini
 PDP-11 simulator V4.0-0 Current        git commit id: 670a3728
 Disabling XQ
 ./boot.ini-12> set cpu 11/84
