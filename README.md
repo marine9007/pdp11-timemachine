@@ -1,6 +1,6 @@
 # 2.11BSD on SIMH PDP-11 Emulator
 
-🖥️ **Experience those mid-80s computer lab days** — the hum of the air conditioning, the glow of green phosphor, waiting your turn at the terminal while someone hogs the mainframe running FORTRAN jobs. Remember when the school finally upgraded to that fancy new MicroPDP? Now you can relive the magic (minus the punch cards and the TA yelling at you) right on your Windows machine.
+🖥️ **Back to the sysadmin office, 1983-1987** — four years running the PDP-11, your own office with the toaster oven and coffee pot, Wednesday bagel day, and that green phosphor glow while you kept the mainframe alive. The Dragons had the keys to the kingdom, and now you can relive it all (minus the actual hardware maintenance) right on your Windows machine.
 
 Run real Unix from 1980s on your PC!
 
