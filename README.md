@@ -12,7 +12,11 @@ Run real Unix from 1980s on your PC or Mac!
 - [SIMH Windows Binaries](https://github.com/simh/simh/releases) — grab the latest Windows release, extract next to this folder
 
 **2. Download the 2.11BSD disk image:**
-- [211bsd.dsk from trailing-edge.com](http://www.trailing-edge.com/~bqt/pdp11/) — download `211bsd.dsk` (~170MB) and place it in this folder
+- Search for `211bsd.dsk` (~170MB) — the original link may be outdated. Try:
+  - [Archive.org](https://archive.org/search.php?query=211bsd.dsk) — search for "211bsd.dsk"
+  - [PDP-11 Resources](https://pdp-11.trailing-edge.com/) — check for disk images
+  - GitHub repositories with SIMH disk images
+- Place `211bsd.dsk` in this folder once downloaded
 
 ### macOS
 
@@ -21,7 +25,11 @@ Run real Unix from 1980s on your PC or Mac!
 - Or install via Homebrew: `brew install simh`
 
 **2. Download the 2.11BSD disk image:**
-- [211bsd.dsk from trailing-edge.com](http://www.trailing-edge.com/~bqt/pdp11/) — download `211bsd.dsk` (~170MB) and place it in this folder
+- Search for `211bsd.dsk` (~170MB) — the original link may be outdated. Try:
+  - [Archive.org](https://archive.org/search.php?query=211bsd.dsk) — search for "211bsd.dsk"
+  - [PDP-11 Resources](https://pdp-11.trailing-edge.com/) — check for disk images
+  - GitHub repositories with SIMH disk images
+- Place `211bsd.dsk` in this folder once downloaded
 
 **3. Make executable (if needed):**
 ```bash
