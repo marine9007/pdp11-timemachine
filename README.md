@@ -67,33 +67,11 @@ Edit `boot.ini` to change the emulated hardware:
 
 ## Boot Sequence
 
-**Follow these steps exactly:**
-
-1. **Run the launch command** (from Quick Start above)
-
-2. **At the `:` prompt** — Press **Enter** (blank input, or type `xp(0,0,0)unix` and press Enter)
-   ```
-   :
-   ```
-   *(Just press Enter here)*
-
-3. **Watch boot messages scroll** — You'll see hardware detection, memory info, etc.
-
-4. **At the `#` prompt** (single user mode) — Press **Ctrl+D**
-   ```
-   # Fast boot ... skipping disk checks
-   ...
-   #
-   ```
-   *(Press Ctrl+D to exit single user mode)*
-
-5. **At `login:` prompt** — Type **root** and press Enter
-   ```
-   login: root
-   ```
-   *(Type "root" and press Enter)*
-
-6. **You're in!** You should see a `#` prompt — you're logged in as root.
+1. Run the command above
+2. At the `:` prompt → **Press Enter** (blank input)
+3. Watch boot messages scroll
+4. At `#` prompt (single user) → **Press Ctrl+D**
+5. At `login:` → Type **root** (no password)
 
 ## You're in Unix!
 
@@ -269,6 +247,68 @@ This is real Unix history running on your machine!
 **No response?** Press Ctrl+E to break, then `quit` to exit.
 
 **Want to start fresh?** Just run the boot command again.
+
+## Example Boot Output
+
+Here's what a successful boot sequence looks like:
+
+```
+$ ../PDP11.exe boot.ini
+PDP-11 simulator V4.0-0 Current        git commit id: 670a3728
+Disabling XQ
+./boot.ini-12> set cpu 11/84
+%SIM-INFO: RQ: RQDX3 controller not valid on a Unibus system, changing to UDA50
+%SIM-INFO: RQB: RQDX3 controller not valid on a Unibus system, changing to UDA50
+%SIM-INFO: RQC: RQDX3 controller not valid on a Unibus system, changing to UDA50
+%SIM-INFO: RQD: RQDX3 controller not valid on a Unibus system, changing to UDA50
+./boot.ini-14> attach rp0 211bsd.dsk
+%SIM-INFO: RP0: './211bsd.dsk' Contains BSD 2.11 partitions
+%SIM-INFO: Partition with highest sector: b, Sectors On Disk: 340670
+84Boot from xp(0,0,0) at 0176700
+: 
+: xp(0,0,0)unix
+Boot: bootdev=05000 bootcsr=0176700
+2.11 BSD UNIX #115: Sat Apr 22 19:07:25 PDT 2000
+    sms1@curly.2bsd.com:/usr/src/sys/GENERIC
+phys mem  = 3932160
+avail mem = 3708224
+user mem  = 307200
+hk 0 csr 177440 vector 210 attached
+ht ? csr 172440 vector 224 skipped:  No CSR.
+ra 0 csr 172150 vector 154 vectorset attached
+rl 0 csr 174400 vector 160 attached
+tm 0 csr 172520 vector 224 attached
+tms 0 csr 174500 vector 260 vectorset attached
+ts ? csr 172520 vector 224 interrupt vector already in use.
+xp 0 csr 176700 vector 254 attached
+erase, kill ^U, intr ^C
+# Fast boot ... skipping disk checks
+/dev/ra0a on /: Specified device does not match mounted device.
+checking quotas: done.
+ra0: Ver 3 mod 2
+ra0 st=3 sb=1 fl=0 en=9
+/dev/swap: Input/output error
+Assuming non-networking system ...
+checking for core dump...
+preserving editor files
+clearing /tmp
+standard daemons: update cron accounting.
+starting lpd
+starting local daemons: sendmail.
+Wed Aug 23 19:40:09 PDT 2006
+2.11 BSD UNIX (curly.2bsd.com) (console)
+login: root
+erase, kill ^U, intr ^C
+# ls
+.cshrc         .tiprc         etc            mnt            usr
+.hushlogin     README         genunix        sbin           var
+.kermrc        VERSION        hostid.core    sendmail.core  vmunix
+.login         a              lib            sys
+.mailrc        bin            lost+found     tmp
+.profile       boot           lpd.core       toyset
+.rhosts        dev            mdec           unix
+#
+```
 
 ---
 Source: http://simh.trailing-edge.com/
